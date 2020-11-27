@@ -1,3 +1,3 @@
 # Redux Saga Lab Series
 1. ทำความรู้จักกับ Redux Saga
-2. Setup Project
+2. Project Setup
