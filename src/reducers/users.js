@@ -1,16 +1,24 @@
-import { Types } from '../actions/users'
+import { Types } from "../actions/users";
 
 const INITIAL_STATE = {
-    items: []
+  items: [],
+  error: "",
 };
 
 export default function users(state = INITIAL_STATE, action) {
-    switch (action.Type) {
-        case Types.GET_USERS_SUCCESS:
-            return {
-                items: action.payload.items
-            }
-        default:
-            return state
-    }
+  switch (action.type) {
+    case Types.GET_USERS_SUCCESS:
+      return {
+        ...state,
+        items: action.payload.items,
+      };
+    case Types.USER_ERROR:
+      console.log(action.payload.error)
+      return {
+        ...state,
+        error: action.payload.error,
+      };
+    default:
+      return state;
+  }
 }
